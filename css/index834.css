@@ -1,0 +1,1121 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  cursor: none;  /*  скрываем стандартный курсор */
+}
+
+html {
+  scroll-timeline-name: --page-scroll-bar;
+  scroll-behavior: smooth;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;          /* Размер курсора */
+  height: 40px;
+  pointer-events: none; /* Чтобы курсор не мешал кликам */
+  background-image: url('../img/mouse.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-50%, calc(-50% + 15px));
+  z-index: 9999;
+}
+
+#progress-bar2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+
+  background-color: #FFC6C5;
+  border: 2px solid black;
+
+  z-index: 9996;
+}
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  transform-origin: left;
+  animation: progress linear;
+  animation-timeline: --page-scroll-bar;
+
+  background-color: #F36B87;
+  border: 2px solid black;
+
+  z-index: 9997;
+}
+
+.header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  height: 104px;
+  background: #860F37;
+  margin: 0;
+  margin-top: 24px;
+  padding: 0;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 0 2px black;
+  z-index: 9998;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 50, 0, 0.3); /* затемнённый фон с зелёным оттенком */
+    
+    display: flex; /* включаем flex */
+    justify-content: center; /* центрируем по горизонтали */
+    align-items: center; /* центрируем по вертикали */
+}
+.modalRECT {
+  margin: 0 auto;
+  width: 520px;
+  height: 368px;
+  background-color: #FFF4F4;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* прижимает содержимое вправо */
+  align-items: center;
+  gap: 20px;
+}
+.modal_greenPalka {
+  margin: 0 auto;
+  width: 520px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;
+}
+.modal-krestik-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.modal-krestik-button {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  background: url('../img/krestik.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.modal-krestik-button:hover {
+  cursor: none;
+  background-image: url('../img/krestik2.png');
+}
+
+.modal-krestik-button:active {
+  background-image: url('../img/krestik3.png');
+}
+
+.OK {
+  background: #F36B87;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 104px;
+  cursor: none; 
+}
+.OK:hover {
+  background: #860F37;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 104px;
+  cursor: none; 
+}
+.OK:active {
+  background: #FFC6C5;
+  color: #000000;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 104px;
+  cursor: none; 
+}
+
+
+
+
+.chuko {
+  position: absolute;
+  left: 57px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 48px;
+  color: #FFC6C5;
+  white-space: nowrap;
+}
+
+.listik {
+  position: absolute;
+  left: 208px; 
+  top: 50%;
+  transform: translateY(-50%);
+  height: 42px;
+  margin-left: 8px; /* добавляет отступ между текстом и картинкой */
+}
+
+.header__content {
+  max-width: 1600px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 57px;
+  display: flex;
+  align-items: center;       /* вертикальное центрирование */
+  justify-content: space-between; /* левый блок слева, правый справа */
+  box-sizing: border-box;
+}
+
+.header__icons {
+  display: flex;
+  gap: 24px;
+}
+
+.icon.zagruzit {
+  width: 200px;
+  height: 56px;
+  background-image: url('../img/zagruzit.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon.zagruzit:hover {
+  background-image: url('../img/zagruzit2.png');
+}
+.icon.zagruzit:active {
+  background-image: url('../img/zagruzit3.png');
+}
+
+#music-button,
+#music-buttonn {
+  display: none;
+}
+#music-button {
+    display: inline-block;
+  }
+
+
+.icon.music,
+.icon.share {
+  width: 56px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon.music {
+  background-image: url('../img/music.png');
+}
+.icon.music:hover {
+  background-image: url('../mg/music2.png');
+}
+.icon.music:active {
+  background-image: url('../img/music3.png');
+}
+
+.icon.share {
+  background-image: url('../img/share.png');
+}
+.icon.share:hover {
+  background-image: url('../img/share2.png');
+}
+.icon.share:active {
+  background-image: url('../img/share3.png');
+}
+
+.icon.music {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#music-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#music-button:hover #music-icon {
+  cursor: none;
+  content: url('../img/music2.png');
+}
+
+#music-button:active #music-icon {
+  content: url('../img/music3.png');
+}
+
+
+
+@keyframes progress {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+
+.GLAV {
+  padding: 0 57px;
+  margin: 0;
+  padding-bottom: 104px;
+  padding-top: 104px;
+}
+
+.title {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 88px;
+  color: #860F37;
+}
+.subtitle {
+  font-family: 'Onest', sans-serif;
+  font-size: 32px;
+  color: #860F37;
+  padding-top: 32px;
+}
+
+.GLAV_greenPalka {
+  margin: 0 auto;
+  margin-top: 120px;
+  width: auto;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.GLAV-rectangle {
+  margin: 0 auto;
+  width: auto;
+  height: 640px;
+  background-color: #FFF4F4;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+.GLAV-rectangle video {
+  height: 80%;
+  object-fit: cover;
+  border: 3px solid black;
+}
+.GLAV-rectangle.video-bg {
+  background: #860F37;
+}
+.krestik-button {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  background: url('../img/krestik.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.krestik-button:hover {
+  cursor: none;
+  background-image: url('../img/krestik2.png');
+}
+
+.krestik-button:active {
+  background-image: url('../img/krestik3.png');
+}
+
+
+
+.text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px; /* промежуток между надписями */
+  text-align: center;
+  color: #860F37;
+}
+
+.title {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 104px;
+}
+
+.subtitle {
+  font-family: 'Onest', sans-serif;
+  font-size: 32px;
+  white-space: pre-line; /* чтобы переносы строки работали */
+}
+
+
+/* Картинка поверх текста */
+.tyk-image {
+  position: absolute;
+  top: 80%;           /* по вертикали центр */
+  left: 80%;        /* отступ справа, можно изменить для сдвига */
+  transform: translateY(-50%);
+  height: 100px;      /* нужный размер */
+  width: auto;
+  animation: pulseScale 1s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Анимация увеличения и уменьшения */
+@keyframes pulseScale {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1); /* увеличивается на 10% */
+  }
+}
+
+
+
+.ONAS {
+  padding: 0 57px;
+  margin: 0;
+  padding-bottom: 104px;
+}
+
+.ONAS_zagolovok {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 72px;
+  color: #860F37;
+}
+
+.ONAS_greenPalka {
+  margin: 0 auto;
+  margin-top: 56px;
+  width: auto;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.ONAS_rect {
+  margin: 0 auto;
+  width: auto;
+  height: 520px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 16px;
+  padding-top: 72px;
+  padding-bottom: 46px;
+}
+
+.ONAS_recTEXT {
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  white-space: pre-line;
+  white-space: nowrap;
+  flex: auto;
+}
+
+.ONAS_gif {
+  max-height: 336px;
+  flex: none;
+}
+
+.ONAS_recTEXT div:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.marquee__inner {
+  display: flex;
+  width: max-content;
+  animation: scroll 12s linear infinite;
+}
+
+.marquee__inner span {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 48px;
+  color: #F7FFD0;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+.ScrollButton {
+  background: #860F37;
+  width: 100%;
+  cursor: none;
+  border: 3px solid;
+  border-color: #860F37;
+}
+
+.ScrollButton:hover {
+  background: #F7FFD0;
+  border: 3px solid;
+  border-color: #860F37;
+}
+
+.ScrollButton:hover span {
+  background: #F7FFD0;
+  color: #860F37;
+}
+
+.ScrollButton:active {
+  background: #C3D377;
+  border: 3px solid;
+  border-color: #860F37;
+}
+
+.ScrollButton:active span {
+  background: #C3D377;
+  color: #860F37;
+}
+
+
+.VOZM {
+  padding: 0 57px;
+  margin: 0;
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+.VOZM22{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0;
+}
+
+.VOZM_zagolovok {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 72px;
+  color: #860F37;
+}
+
+.polosa1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+} 
+
+.polosa11_greenPalka {
+  margin: 0 auto;
+  margin-top: 56px;
+  width: 598px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.polosa11_rect {
+  margin: 0 auto;
+  width: 598px;
+  height: 664px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 40px;
+}
+
+.polosa12_greenPalka {
+  margin: 0 auto;
+  width: 720px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.polosa12_rect {
+  margin: 0 auto;
+  width: 720px;
+  height: 584px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 40px;
+}
+
+.polosa2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+} 
+
+.polosa21_greenPalka {
+  margin: 0 auto;
+  margin-top: 32px;
+  width: 720px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.polosa21_rect {
+  margin: 0 auto;
+  width: 720px;
+  height: 470px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center; 
+  align-items: center;
+  gap: 16px;
+}
+
+.polosa22_greenPalka {
+  margin: 0 auto;
+  width: 476px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.polosa22_rect {
+  margin: 0 auto;
+  width: 476px;
+  height: 592px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 40px;
+}
+
+.polosa3_greenPalka {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 476px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.polosa3_rect {
+  margin: 0 auto;
+  width: 476px;
+  height: 224px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  gap: 40px;
+}
+
+
+.polosa11TEXT {
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+}
+
+.DOWMLOAD {
+  background: #F36B87;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 68px;
+  cursor: none; 
+}
+.DOWMLOAD:hover {
+  background: #860F37;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  cursor: none; 
+}
+.DOWMLOAD:active {
+  background: #FFC6C5;
+  color: #000000;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  cursor: none; 
+}
+
+
+.ZAPOLN {
+  padding: 0 57px;
+  margin: 0;
+  padding-bottom: 104px;
+  padding-top: 104px;
+}
+
+.ZAPOLN_zagolovok {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 72px;
+  color: #860F37;
+}
+.ZAPOLN_zagolovok2 {
+  font-family: 'Onest', sans-serif;
+  font-size: 32px;
+  color: #860F37;
+  padding-top: 24px;
+}
+
+.ZAPOLN_greenPalka {
+  margin: 0 auto;
+  margin-top: 56px;
+  width: auto;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;       /* по вертикали по центру */
+}
+
+.ZAPOLN_rec {
+  margin: 0 auto;
+  width: auto;
+  height: 1046px;
+  background-color: #FDF1F3;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 56px;
+}
+.ZAPOLN_all {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+.ZAPOLN_pole {
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: left;
+}
+.ZAPOLN_pole1{
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  color: #000000;
+  padding-left: 48px;
+  width: auto;
+  height: 67px;
+  background-color: #FFFFFF;
+  border: 3px solid black;
+  cursor: none;
+}
+.ZAPOLN_pole2{
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  color: #000000;
+  padding-left: 48px;
+  width: 312px;
+  height: 67px;
+  background-color: #FFFFFF;
+  border: 3px solid black;
+  cursor: none;
+}
+.ZAPOLN_pole3{
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  color: #000000;
+  padding-left: 48px;
+  width: 312px;
+  height: 258px;
+  background-color: #FFFFFF;
+  border: 3px solid black;
+  padding-top: 24px;
+  cursor: none;
+}
+
+.OTVETGIF {
+  height: 414px;
+  width: auto;
+}
+.OTPRAVIT {
+  background: #F36B87;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  width: 232px;
+  height: 72px;
+  cursor: none; 
+}
+.OTPRAVIT:hover {
+  background: #860F37;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  cursor: none; 
+}
+.OTPRAVIT:active {
+  background: #FFC6C5;
+  color: #000000;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  cursor: none; 
+}
+
+.modal-second {
+  display: none;
+  position: fixed;
+  z-index: 1100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 50, 0, 0.3);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modalRECT2 {
+  margin: 0 auto;
+  width: 520px;
+  height: 286px;
+  background-color: #FFF4F4;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* прижимает содержимое вправо */
+  align-items: center;
+  gap: 48px;
+}
+.ZAPISAN{
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+}
+.OK2 {
+  background: #F36B87;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 104px;
+  cursor: none; 
+}
+.OK2:hover {
+  background: #860F37;
+  color: #FFF4F4;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 104px;
+  cursor: none; 
+}
+.OK2:active {
+  background: #FFC6C5;
+  color: #000000;
+  border: 3px solid black;
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  padding: 24px 104px;
+  cursor: none; 
+}
+.modal_greenPalka2 {
+  margin: 0 auto;
+  width: 520px;
+  height: 56px;
+  background-color: #82DFCC;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end; /* прижимает содержимое вправо */
+  align-items: center;
+}
+.modal-krestik-button2 {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.modal-krestik-button2 {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  background: url('../img/krestik.png') no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.modal-krestik-button2:hover {
+  cursor: none;
+  background-image: url('../img/krestik2.png');
+}
+
+.modal-krestik-button2:active {
+  background-image: url('../img/krestik3.png');
+}
+
+
+
+.ONZYVY {
+  padding: 0 57px;
+  margin: 0;
+  padding-bottom: 104px;
+}
+
+.ONZYVY_zagolovok {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 72px;
+  color: #860F37;
+  padding-bottom: 56px;
+}
+
+.LINEotzyv {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  /* Скрываем скроллбар во всех браузерах */
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE и Edge */
+}
+.LINEotzyv::-webkit-scrollbar {
+  display: none;                   /* Chrome, Safari, Opera */
+}
+
+
+.SKACHAT {
+  padding: 0 57px;
+  margin: 0;
+  padding-bottom: 104px;
+  padding-top: 104px;
+}
+
+.SKACHAT_zagolovok {
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 72px;
+  color: #860F37;
+}
+.SKACHATline {
+  padding-top: 56px;
+  display: flex;
+  flex-direction: raw;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.kurkod {
+  width: 232px;
+  height: 232px;
+}
+
+
+.knopki {
+  display: flex;
+  flex-wrap: wrap; /* разрешаем перенос строк */
+  width: 476px; /* 228px * 2 + 12px (границы и отступы) */
+  gap: 8px; /* отступы между элементами (по желанию) */
+}
+.knopkiINS {
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  color: white;
+  width: 232px;
+  height: 112px;
+  background-color: #F36B87;
+  border: 3px solid black;
+  cursor: none; 
+  box-sizing: border-box;
+}
+.knopkiINS:hover {
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  color: black;
+  background-color: #FFC6C5;
+  border: 3px solid black;
+  cursor: none;
+}
+.knopkiINS:active {
+  font-family: 'Onest', sans-serif;
+  font-size: 24px;
+  color: white;
+  background-color: #860F37;
+  border: 3px solid black;
+  cursor: none;
+}
+.dvaChela {
+  height: auto;
+  width: 720px;
+}
+
+.footer {
+  background-color: #860F37;
+  width: 100%;
+  height: 171px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+.Follow {
+  font-family: 'Onest', sans-serif;
+  font-size: 32px;  
+  color: white;
+}
+.imgges {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+
+}
+.imgges img {
+  height: 48px;
+}
+
+
+.kar {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: background-image 0.01s;
+  cursor: none;
+}
+/* Исходные картинки */
+.kar1 { background-image: url('../img/kar1.png'); }
+.kar2 { background-image: url('../img/kar2.png'); }
+.kar3 { background-image: url('../img/kar3.png'); }
+.kar4 { background-image: url('../img/kar4.png'); }
+.kar5 { background-image: url('../img/kar5.png'); }
+.kar6 { background-image: url('../img/kar6.png'); }
+
+/* Hover — картинка с одной дополнительной цифрой */
+.kar1:hover { background-image: url('../img/kar11.png'); }
+.kar2:hover { background-image: url('../img/kar22.png'); }
+.kar3:hover { background-image: url('../img/kar33.png'); }
+.kar4:hover { background-image: url('../img/kar44.png'); }
+.kar5:hover { background-image: url('../img/kar55.png'); }
+.kar6:hover { background-image: url('../img/kar66.png'); }
+
+/* Active — картинка с двумя дополнительными цифрами (только пока нажата мышь) */
+.kar1:active { background-image: url('../img/kar111.png'); }
+.kar2:active { background-image: url('../img/kar222.png'); }
+.kar3:active { background-image: url('../img/kar333.png'); }
+.kar4:active { background-image: url('../img/kar444.png'); }
+.kar5:active { background-image: url('../img/kar555.png'); }
+.kar6:active { background-image: url('../img/kar666.png'); }
